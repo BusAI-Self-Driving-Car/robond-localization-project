@@ -13,6 +13,7 @@
 ## Dependencies
 
 ```
+$ sudo apt-get install ros-kinetic-gazebo-ros-pkgs ros-kinetic-gazebo-ros-control
 $ sudo apt-get install ros-kinetic-navigation
 $ sudo apt-get install ros-kinetic-map-server
 $ sudo apt-get install ros-kinetic-move-base
