@@ -2,31 +2,43 @@
 <robot>
 
   <gazebo reference="chassis">
-    <material>Gazebo/Blue</material>
+     <material>Gazebo/Blue</material>
   </gazebo>
 
-  <gazebo reference="left_wheel">
-    <material>Gazebo/Black</material>
+  <gazebo reference="left_front_wheel">
+     <material>Gazebo/Black</material>
   </gazebo>
 
-  <gazebo reference="right_wheel">
-    <material>Gazebo/Black</material>
+  <gazebo reference="left_back_wheel">
+     <material>Gazebo/Black</material>
+  </gazebo>
+
+  <gazebo reference="right_front_wheel">
+     <material>Gazebo/Black</material>
+  </gazebo>
+
+  <gazebo reference="right_back_wheel">
+     <material>Gazebo/Black</material>
   </gazebo>
 
   <gazebo>
-    <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+    <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
       <legacyMode>false</legacyMode>
       <alwaysOn>true</alwaysOn>
-      <updateRate>10</updateRate>
-      <leftJoint>left_wheel_hinge</leftJoint>
-      <rightJoint>right_wheel_hinge</rightJoint>
+      <updateRate>100.0</updateRate>
+      <leftFrontJoint>left_front_wheel_hinge</leftFrontJoint>
+      <rightFrontJoint>right_front_wheel_hinge</rightFrontJoint>
+      <leftRearJoint>left_back_wheel_hinge</leftRearJoint>
+      <rightRearJoint>right_back_wheel_hinge</rightRearJoint>
       <wheelSeparation>0.4</wheelSeparation>
       <wheelDiameter>0.2</wheelDiameter>
-      <torque>10</torque>
+      <torque>20</torque>
+      <topicName>cmd_vel</topicName>
       <commandTopic>cmd_vel</commandTopic>
       <odometryTopic>odom</odometryTopic>
       <odometryFrame>odom</odometryFrame>
       <robotBaseFrame>robot_footprint</robotBaseFrame>
+      <broadcastTF>true</broadcastTF>  <!-- Must be true or gmapping does not work in simulation environment -->
     </plugin>
     <material>Gazebo/Black</material>
   </gazebo>
@@ -67,6 +79,7 @@
 
   <!-- hokuyo -->
   <gazebo reference="hokuyo">
+    <material>Gazebo/Gray</material>
     <sensor type="ray" name="head_hokuyo_sensor">
       <pose>0 0 0 0 0 0</pose>
       <visualize>false</visualize>
