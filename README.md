@@ -21,6 +21,7 @@ $ rospack profile
 $ sudo apt-get install ros-kinetic-amcl
 ```
 
-## Adding a Model Plugin
+## Reference
 
 - [Tutorial: Using Gazebo plugins with ROS](http://gazebosim.org/tutorials?tut=ros_gzplugins)
+- [ROS Navigation Tuning Guide - Kaiyu Zheng](http://kaiyuzheng.me/documents/navguide.pdf)
