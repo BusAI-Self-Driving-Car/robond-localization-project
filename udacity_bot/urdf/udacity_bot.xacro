@@ -3,8 +3,8 @@
 <robot name="udacity_bot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <!-- Color descriptions -->
-  <material name="orange">
-    <color rgba="1 0.5 0.32 1"/>
+  <material name="blue">
+    <color rgba="0 0 0.8 1"/>
   </material>
 
   <material name="black">
@@ -15,23 +15,13 @@
     <color rgba="1 1 1 1"/>
   </material>
 
-  <material name="gray">
-    <color rgba="0.8 0.8 0.8 1"/>
-  </material>
-
-  <material name="blue">
-    <color rgba="0 0 1 1"/>
+  <material name="green">
+    <color rgba="0 1 0 1"/>
   </material>
 
   <xacro:include filename="$(find udacity_bot)/urdf/udacity_bot.gazebo" />
 
   <link name="robot_footprint"></link>
-
-  <joint name="robot_footprint_joint" type="fixed">
-    <origin xyz="0 0 0" rpy="0 0 0" />
-    <parent link="robot_footprint"/>
-    <child link="chassis" />
-  </joint>
 
   <link name='chassis'>
     <pose>0 0 0.1 0 0 0</pose>
@@ -53,7 +43,7 @@
       </geometry>
     </collision>
 
-    <visual name='chassis_visual'>
+    <visual>
       <origin xyz="0 0 0" rpy=" 0 0 0"/>
       <geometry>
         <box size=".4 .2 .1"/>
@@ -61,6 +51,12 @@
       <material name="blue"/>
     </visual>
   </link>
+
+  <joint name="robot_footprint_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="robot_footprint"/>
+    <child link="chassis" />
+  </joint>
 
   <link name='left_front_wheel'>
     <inertial>
@@ -80,7 +76,7 @@
       </geometry>
     </collision>
 
-    <visual name='visual'>
+    <visual>
       <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
       <geometry>
         <cylinder radius="0.1" length="0.05"/>
@@ -116,7 +112,7 @@
        </geometry>
      </collision>
 
-     <visual name='visual'>
+     <visual>
        <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
        <geometry>
          <cylinder radius="0.1" length="0.05"/>
@@ -152,7 +148,7 @@
         </geometry>
       </collision>
 
-      <visual name='visual'>
+      <visual>
         <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
         <geometry>
           <cylinder radius="0.1" length="0.05"/>
@@ -188,7 +184,7 @@
          </geometry>
        </collision>
 
-       <visual name='visual'>
+       <visual>
          <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
          <geometry>
            <cylinder radius="0.1" length="0.05"/>
@@ -226,12 +222,12 @@
         </geometry>
         </collision>
 
-    <visual name="visual">
+    <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
             <box size="0.05 0.05 0.05" />
         </geometry>
-        <material name="gray"/>
+        <material name="green"/>
      </visual>
    </link>
 
@@ -263,7 +259,7 @@
             </geometry>
         </collision>
 
-        <visual name="visual">
+        <visual>
            <origin xyz="0 0 0" rpy="0 0 0"/>
            <geometry>
                <mesh filename="package://udacity_bot/meshes/hokuyo.dae"/>

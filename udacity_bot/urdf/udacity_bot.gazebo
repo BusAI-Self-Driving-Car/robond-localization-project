@@ -40,11 +40,12 @@
       <robotBaseFrame>robot_footprint</robotBaseFrame>
       <broadcastTF>true</broadcastTF>  <!-- Must be true or gmapping does not work in simulation environment -->
     </plugin>
+    <material>Gazebo/Black</material>
   </gazebo>
 
 
   <gazebo reference="camera">
-    <material>Gazebo/Gray</material>
+    <material>Gazebo/Green</material>
     <sensor type="camera" name="camera1">
       <update_rate>30.0</update_rate>
       <camera name="head">
