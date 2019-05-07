@@ -20,3 +20,7 @@ $ sudo apt-get install ros-kinetic-move-base
 $ rospack profile
 $ sudo apt-get install ros-kinetic-amcl
 ```
+
+## Adding a Model Plugin
+
+- [Tutorial: Using Gazebo plugins with ROS](http://gazebosim.org/tutorials?tut=ros_gzplugins)
