@@ -1,6 +1,6 @@
 <?xml version='1.0'?>
 
-<robot name="udacity_bot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot name="rover_bot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <!-- Color descriptions -->
   <material name="blue">
@@ -19,7 +19,7 @@
     <color rgba="0 1 0 1"/>
   </material>
 
-  <xacro:include filename="$(find udacity_bot)/urdf/udacity_bot.gazebo" />
+  <xacro:include filename="$(find rover_bot)/urdf/rover_bot.gazebo" />
 
   <link name="robot_footprint"></link>
 
@@ -262,8 +262,8 @@
         <visual>
            <origin xyz="0 0 0" rpy="0 0 0"/>
            <geometry>
-               <mesh filename="package://udacity_bot/meshes/hokuyo.dae"/>
-               <!-- mesh filename="$(find udacity_bot)/meshes/hokuyo.dae"/ -->
+               <mesh filename="package://rover_bot/meshes/hokuyo.dae"/>
+               <!-- mesh filename="$(find rover_bot)/meshes/hokuyo.dae"/ -->
            </geometry>
         </visual>
     </link>
