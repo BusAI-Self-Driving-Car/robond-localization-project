@@ -1,8 +1,18 @@
 # RoboND Localization Project: Where am I?
 
-![](images/gazebo-track.png)
+![](writeup/images/intro-image.png)
 
-## Overview
+An indoor robot localization problem was investigated with two customized robots built in Gazebo. The robots were built from scratch and defined in urdf format. A differential controlled 2-wheel robot model was built from scratch and a skid steer 4-wheel robot was built based on the 2-wheel robot model. Both models were attached with Odometry, Lidar and camera sensors, which were reliable for localization applications. ROS and Rviz were used to control and visualize the localization and navigation experiments. The results indicated the localization in both cases were effective.
+
+![](writeup/images/udacity-bot.png)
+
+![](writeup/images/rover-bot.png)
+
+![](writeup/images/roverpi-18650.jpg)
+
+More detailed information could be found in the [writeup](writeup.pdf).
+
+## Goals
 
 - Building a mobile robot for simulated tasks.
 
